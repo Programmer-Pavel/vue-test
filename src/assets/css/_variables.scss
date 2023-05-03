@@ -1,0 +1,21 @@
+$color-red: #9c1421;
+$color-black: #152831;
+$color-gray: #667185;
+$color-light-gray: #f3f4f6;
+
+$screens: (
+  wide: 1300,
+  large: 1200,
+  medium: 992,
+  small: 767,
+  exsm: 576,
+);
+
+@mixin media($value) {
+  $width: map_get($screens, $value);
+  @if ($width != 0) {
+    @media screen and (max-width: $width + "px") {
+      @content;
+    }
+  }
+}
